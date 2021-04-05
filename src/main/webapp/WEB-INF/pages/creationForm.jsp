@@ -8,10 +8,11 @@
     <title>Creation From</title>
 </head>
 <body>
+<h2>Fill the following fields:</h2>
 <form:form action="${pageContext.request.contextPath}/create" method="post" modelAttribute="policy">
     <div>
         Name
-        <input type="text" name="ownerName" value="${not empty policy.ownerFullName ? policy.ownerFullName : ''}">
+        <input type="text" name="ownerFullName" value="${not empty policy.ownerFullName ? policy.ownerFullName : ''}">
         <form:errors path="ownerFullName" cssStyle="color: red"/>
     </div>
     <div>

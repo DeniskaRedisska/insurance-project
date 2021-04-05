@@ -4,19 +4,18 @@ import com.example.demo.service.InsuredObjService;
 import com.example.demo.service.PolicyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class MainController {
+public class MainPageController {
 
     private final PolicyService service;
 
     private final InsuredObjService insuredObjService;
 
     @Autowired
-    public MainController(PolicyService service, InsuredObjService insuredObjService) {
+    public MainPageController(PolicyService service, InsuredObjService insuredObjService) {
         this.service = service;
         this.insuredObjService = insuredObjService;
     }
@@ -27,7 +26,6 @@ public class MainController {
         modelAndView.addObject("policies", service.getAllPolicies());
         return modelAndView;
     }
-
 
 
     @GetMapping("/insuredObjects")
