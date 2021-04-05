@@ -3,7 +3,7 @@ create table policy
  contract_date date not null,
  contract_duration int8 not null,
  end_date date,
- owner_name varchar(255),
+ owner_full_name varchar(255),
  start_date date,
  policy_type_id int8,
  insured_obj_id int8, primary key (id)
