@@ -1,0 +1,27 @@
+version: "3"
+services:
+  policy-service:
+      build: ./
+      ports:
+      - "8080:8080"
+      networks:
+        - service-postgres
+      depends_on:
+        - postgresDB
+
+  postgresDB:
+    image: postgres
+    restart: always
+    networks:
+      - service-postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=deniskarediska
+      - POSTGRES_DB=insuranceDB
+    ports:
+      - "5432:5432"
+
+
+networks:
+  service-postgres:
+
